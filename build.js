@@ -4,12 +4,12 @@ require('shelljs/global');
 var concat = require('concat-files');
 var fs = require('fs');
 
-var polymerPath = __dirname + '/node_modules/Polymer/';
+var polymerPath = __dirname + '/bower_components/polymer/';
 var polymerDest = __dirname + '/polymer.js';
-var concatFiles = ['dist/polymer-micro.html', 'dist/polymer-mini.html', 'dist/polymer.html'];
+var concatFiles = ['polymer-micro.html', 'polymer-mini.html', 'polymer.html'];
 
 // dirty, but works
-exec('cd ' + polymerPath + ' && npm i && npm run build');
+// exec('cd ' + polymerPath + ' && npm i && npm run build');
 
 concatFiles = concatFiles.map(function(filePath) {
   return polymerPath + filePath;
